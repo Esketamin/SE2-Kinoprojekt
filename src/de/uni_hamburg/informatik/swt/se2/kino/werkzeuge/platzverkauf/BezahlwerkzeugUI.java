@@ -35,23 +35,23 @@ class BezahlwerkzeugUI {
 	private JFrame erstelleDialog() throws ParseException {
 		JFrame fenster = new JFrame();
 
-		JLabel _titel = new JLabel("ThisIsBezahling");
+		_titel = new JLabel("ThisIsBezahling");
 
-		JPanel _hauptPanel = new JPanel();
-		JLabel _preisLabel = new JLabel("Preis:");
-		JLabel _preisAnzeige = new JLabel();
-		JLabel _einzahlungLabel = new JLabel("Eingezahlt:");
+		_hauptPanel = new JPanel();
+		_preisLabel = new JLabel("Preis:");
+		_preisAnzeige = new JLabel();
+		_einzahlungLabel = new JLabel("Eingezahlt:");
 		MaskFormatter formatter = new MaskFormatter("####,##");
 		formatter.setPlaceholder("   000");
-		JFormattedTextField _einzahlungsAnzeige = new JFormattedTextField(
+		_einzahlungsAnzeige = new JFormattedTextField(
 				formatter);
 		_einzahlungsAnzeige.setText("0");
-		JLabel _restbetragLabel = new JLabel();
-		JLabel _restbetragAnzeige = new JLabel();
+		_restbetragLabel = new JLabel();
+		_restbetragAnzeige = new JLabel();
 
-		JPanel _buttonPanel = new JPanel();
-		JButton _okButton = new JButton("OK");
-		JButton _exitButton = new JButton("Abbrechen");
+		_buttonPanel = new JPanel();
+		_okButton = new JButton("OK");
+		_exitButton = new JButton("Abbrechen");
 
 		_buttonPanel.add(_okButton);
 		_buttonPanel.add(_exitButton);
