@@ -64,19 +64,47 @@ public class Bezahlwerkzeug {
 	}
 
 	private void rechneUndAktualisiereUI() {
-		if (_sichtbarkeit) {
-			int Eingabe = Integer.parseInt(_ui.getEinzahlungsAnzeige()
-					.getText());
+		if (_sichtbarkeit) {			
+			String EinzahlungsAnzeige = _ui.getEinzahlungsAnzeige().getText();
+			EinzahlungsAnzeige = EinzahlungsAnzeige.replaceAll(",", "");
+			EinzahlungsAnzeige = EinzahlungsAnzeige.replaceAll(" ", "");
+			int Eingabe = Integer.parseInt(EinzahlungsAnzeige);
+			
 			Integer Ausgabe = _preis - Eingabe;
-			_ui.getPreisAnzeige().setText(_preis.toString());
-			_ui.getRestbetragAnzeige().setText(Ausgabe.toString());
-
-			if (Ausgabe > 0) {
-				_ui.getRestbetragLabel().setText("Zu Zahlen");
-			} else {
-				_ui.getRestbetragLabel().setText("Rückgeld");
+			
+			if(Ausgabe<=0){
+				_ui.getOKButton().setEnabled(true);
+			}else{
+				_ui.getOKButton().setEnabled(false);
 			}
-
+			
+			String StringPreis = "";
+			String StringAusgabe = "";
+			
+			if(_preis>99){
+				StringPreis = new StringBuilder(_preis.toString()).insert(_preis.toString().length()-2, ",").toString();
+			}else if(_preis>9 && _preis<=99){
+				StringPreis = "0,"+_preis;
+			}else if(_preis<=9 && _preis>=0){
+				StringPreis = "0,0"+_preis;
+			}else{
+				StringPreis = "Negative prize xD";
+			}
+				
+			if(Math.abs(Ausgabe)>99){
+				StringAusgabe = new StringBuilder(Ausgabe.toString()).insert(Ausgabe.toString().length()-2, ",").toString();
+			}else if(Ausgabe>9 && Ausgabe<=99){
+				StringAusgabe = "0,"+Ausgabe;
+			}else if(Ausgabe<=9 && Ausgabe>=0){
+				StringAusgabe = "0,0"+Ausgabe;
+			}else if(Ausgabe<0 && Ausgabe>=-9){
+				StringAusgabe = "-0,0"+Math.abs(Ausgabe);
+			}else{
+				StringAusgabe = "-0,"+Math.abs(Ausgabe);
+			}
+			
+			_ui.getPreisAnzeige().setText(StringPreis);
+			_ui.getRestbetragAnzeige().setText(StringAusgabe);
 		}
 	}
 
