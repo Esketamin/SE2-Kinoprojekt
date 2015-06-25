@@ -85,6 +85,13 @@ public class PlatzVerkaufsWerkzeug {
 						fuehreBarzahlungDurch();
 					}
 				});// +
+		
+		_bezahlwerkzeug.getBezahlwerkzeugUI().getExitButton().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				_ui.getPlatzplan().entferneAuswahl();
+			}
+		});
 	}
 
 	/**

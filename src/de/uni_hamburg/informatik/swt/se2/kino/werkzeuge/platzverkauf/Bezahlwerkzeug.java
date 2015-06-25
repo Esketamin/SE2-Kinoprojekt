@@ -18,7 +18,7 @@ public class Bezahlwerkzeug {
 			public void actionPerformed(ActionEvent e) {
 				rechneUndAktualisiereUI();
 			}
-		});// evtl. speziellerer Listerner
+		});
 
 		_ui.getExitButton().addActionListener(new ActionListener() {
 			@Override
@@ -52,8 +52,7 @@ public class Bezahlwerkzeug {
 	 * Setzt den Preis des Dialogfensters und ruft die Methode
 	 * "rechneundaktualisiereUI" auf.
 	 * 
-	 * @param Der
-	 *            zu bezahlende Preis
+	 * @param Der zu bezahlende Preis
 	 * @assert Preis größer oder gleich 0
 	 */
 	public void setzePreis(int preis) {

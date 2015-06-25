@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.30)  18 JUN 2015 11:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.30)  25 JUN 2015 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1118,15 +1118,35 @@ LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images/UI-Entwurf.png>] 
-<./Images/UML.png, id=27, 697.60625pt x 526.96875pt>
-File: ./Images/UML.png Graphic file (type png)
- <use ./Images/UML.png>
-Package pdftex.def Info: ./Images/UML.png used on input line 38.
-(pdftex.def)             Requested size: 239.70367pt x 181.0727pt.
+<./Images/frame.png, id=27, 250.9375pt x 173.64874pt>
+File: ./Images/frame.png Graphic file (type png)
 
-[2
+<use ./Images/frame.png>
+Package pdftex.def Info: ./Images/frame.png used on input line 47.
+(pdftex.def)             Requested size: 167.79518pt x 116.11882pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
- <./Images/UML.png (PNG copy)>]
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2
+
+ <./Images/frame.png>] <./Images/UML2.png, id=38, 433.62pt x 401.5pt>
+File: ./Images/UML2.png Graphic file (type png)
+ <use ./Images/UML2.png>
+Package pdftex.def Info: ./Images/UML2.png used on input line 54.
+(pdftex.def)             Requested size: 239.70367pt x 221.94681pt.
+
+Overfull \vbox (16.25638pt too high) detected at line 54
+ []
+
+[3
+
+ <./Images/UML2.png>]
 \tf@nav=\write6
 \openout6 = `slides.nav'.
 
@@ -1136,11 +1156,11 @@ Package pdftex.def Info: ./Images/UML.png used on input line 38.
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 39.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 39.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 39.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 39.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1148,23 +1168,24 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 39.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 16361 strings out of 493304
- 296975 string characters out of 6139871
- 380232 words of memory out of 5000000
- 19417 multiletter control sequences out of 15000+600000
- 7334 words of font info for 20 fonts, out of 8000000 for 9000
+ 16460 strings out of 493304
+ 299006 string characters out of 6139871
+ 381232 words of memory out of 5000000
+ 19493 multiletter control sequences out of 15000+600000
+ 14909 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,17n,53p,395b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,17n,57p,395b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/
 fonts/type1/public/cm-super/sfss0600.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfss1440.pfb>
-Output written on slides.pdf (2 pages, 54456 bytes).
+m-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb
+>
+Output written on slides.pdf (3 pages, 78892 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

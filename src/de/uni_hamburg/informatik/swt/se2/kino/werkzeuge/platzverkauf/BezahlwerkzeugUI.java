@@ -1,5 +1,7 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.platzverkauf;
 
+import java.awt.Dimension;
+import java.text.NumberFormat;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -18,15 +20,10 @@ class BezahlwerkzeugUI {
 	private JButton _exitButton;
 
 	public BezahlwerkzeugUI() {
-		try {
-			_popUpFenster = erstelleDialog();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		_popUpFenster = erstelleDialog();
 	}
 
-	private JFrame erstelleDialog() throws ParseException {
+	private JFrame erstelleDialog() {
 		JFrame fenster = new JFrame();
 		
 		JLabel preisLabel = new JLabel("Preis:");
@@ -34,9 +31,13 @@ class BezahlwerkzeugUI {
 		_preisAnzeige.setHorizontalAlignment(SwingConstants.RIGHT);
 		JLabel Euro1 = new JLabel("€");
 		JLabel einzahlungLabel = new JLabel("Eingezahlt:");
-		MaskFormatter formatter = new MaskFormatter("####,##");
-		formatter.setPlaceholder("0000000");		
-		_einzahlungsAnzeige = new JFormattedTextField(formatter);
+		try	{
+			MaskFormatter formatter = new MaskFormatter("####,##");
+			formatter.setPlaceholder("0000000");
+			_einzahlungsAnzeige = new JFormattedTextField(formatter);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		JLabel Euro2 = new JLabel("€");
 		JLabel Minus = new JLabel("_");
 		JLabel Line = new JLabel("______________");
@@ -63,26 +64,30 @@ class BezahlwerkzeugUI {
 		fenster.add(_exitButton);
 		
 		preisLabel.setBounds(20,15,300,20);
-		_preisAnzeige.setBounds(102,15,100,20);
-		Euro1.setBounds(208, 15, 20, 20);
+		_preisAnzeige.setBounds(107,15,100,20);
+		Euro1.setBounds(212, 15, 20, 20);
 		einzahlungLabel.setBounds(20,40,300,20);
-		_einzahlungsAnzeige.setBounds(155,40,50,20);
-		Euro2.setBounds(208, 40, 20, 20);
-		Minus.setBounds(145, 35, 20, 20);
-		Line.setBounds(120, 49, 100, 20);
+		Dimension size = _einzahlungsAnzeige.getPreferredSize();
+		_einzahlungsAnzeige.setBounds(154,40,size.width,size.height);
+		Euro2.setBounds(212, 40, 20, 20);
+		Minus.setBounds(142, 36, 20, 20);
+		Line.setBounds(135, 49, 100, 20);
 		restbetragLabel.setBounds(20,65,300,20);
-		_restbetragAnzeige.setBounds(102,65,100,20);
-		Euro3.setBounds(208, 65, 20, 20);
-		_okButton.setBounds(10,110,100,20);
-		_exitButton.setBounds(120,110,100,20);
+		_restbetragAnzeige.setBounds(107,65,100,20);
+		Euro3.setBounds(212, 65, 20, 20);
 		
+		size = _exitButton.getPreferredSize();
+		_okButton.setBounds(10,110,size.width,size.height);
+		_exitButton.setBounds(20+size.width,110,size.width,size.height);
+		
+		fenster.setDefaultCloseOperation(0);
 		fenster.setLayout(null);
-		fenster.setSize(248, 180);
+		fenster.setSize(size.width*2+30, 120+size.height);
 		fenster.setLocationRelativeTo(null);
 		
 		return fenster;
 	}
-
+	
 	public JButton getOKButton() {
 		return _okButton;
 	}
